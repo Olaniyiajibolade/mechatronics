@@ -2,8 +2,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# install matplotlib seaborn
-
 melbourne_csv_file_path = "C:/Users/Hello/Downloads/melb_data.csv"
 melbourne_data = pd.read_csv(melbourne_csv_file_path)
 melbourne_data_features = [
@@ -14,10 +12,11 @@ melbourne_data_features = [
     "Latitude",
 ]
 
-print(melbourne_data.describe())
+# print(melbourne_data.describe())
 print("Head Details")
-print(melbourne_data.head())
-print(melbourne_data.isnull().sum())
+# print(melbourne_data.head())
+# print(melbourne_data.isnull().sum())
+print(melbourne_data_features[2])
 
 
 # Vehicle Perforamnce Analyser
@@ -31,7 +30,7 @@ except FileNotFoundError:
     print("Error: The file was not found. Please check the file path")
     exit()
 
-# viewing the main data structure
+# viewing the data for the structure
 print(vehicle_data.head())
 
 # data cleaning

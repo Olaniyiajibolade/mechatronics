@@ -1,10 +1,38 @@
 import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+sns.set_theme(style="darkgrid")  # style for the graph
 
 mock_car_file = r"c:\Users\Hello\Downloads\archive\car_performance_dataset.csv"
 try:
     mock_data = pd.read_csv(mock_car_file)
-    print(mock_data.describe())
+    # print(mock_data.describe())
 except FileNotFoundError:
     print("Error: file not found")
 
-print(mock_data.head())
+# print(mock_data.head())
+
+avg_fuel = mock_data["Fuel_Efficiency"].mean()
+avg_acceleration = mock_data["Acceleration"].mean()
+# avg_price = mock_data["Price"].mean()
+print(f"Average fuel: {avg_fuel: .2f}")
+print(f"Average acceleration: {avg_acceleration: .2f} (km/h)")
+
+
+# put exceptions if there is no coresponding data
+# lets try something
+for car in mock_data.head()["Car_Brand"]:
+    print(car)
+
+
+plt.figure(figsize=(12, 6))
+plt.plot(mock_data["Acceleration"], label="Acceleration")
+plt.plot(mock_data["Fuel_Efficiency"], label="Fuel_Efficiency")
+plt.title("Vehicle Acceleration and Fuel Eficiency Over Time")
+plt.xlabel("m/s(square)")
+plt.ylabel("fuel")
+plt.legend()
+plt.xticks(rotation=45)
+plt.tight_layout()  # Ensures labels don't get cut off
+plt.show()
