@@ -17,7 +17,7 @@ avg_fuel = mock_data["Fuel_Efficiency"].mean()
 avg_acceleration = mock_data["Acceleration"].mean()
 # avg_price = mock_data["Price"].mean()
 print(f"Average fuel: {avg_fuel: .2f}")
-print(f"Average acceleration: {avg_acceleration: .2f} (km/h)")
+print(f"Average acceleration: {avg_acceleration: .2f}")
 
 
 # put exceptions if there is no coresponding data
@@ -26,7 +26,7 @@ for car in mock_data.head()["Car_Brand"]:
     print(car)
 
 
-plt.figure(figsize=(12, 6))
+""" plt.figure(figsize=(12, 6))
 plt.plot(mock_data["Acceleration"], label="Acceleration")
 plt.plot(mock_data["Fuel_Efficiency"], label="Fuel_Efficiency")
 plt.title("Vehicle Acceleration and Fuel Eficiency Over Time")
@@ -35,4 +35,4 @@ plt.ylabel("fuel")
 plt.legend()
 plt.xticks(rotation=45)
 plt.tight_layout()  # Ensures labels don't get cut off
-plt.show()
+plt.show() """
