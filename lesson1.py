@@ -1,4 +1,8 @@
 import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# install matplotlib seaborn
 
 melbourne_csv_file_path = "C:/Users/Hello/Downloads/melb_data.csv"
 melbourne_data = pd.read_csv(melbourne_csv_file_path)
@@ -11,6 +15,24 @@ melbourne_data_features = [
 ]
 
 print(melbourne_data.describe())
+print("Head Details")
+print(melbourne_data.head())
+print(melbourne_data.isnull().sum())
 
 
-print(pd.DataFrame({"Yes": [20, 10], "No": [30, 19]}))
+# Vehicle Perforamnce Analyser
+# Project 1
+
+try:
+    vehicle_performance_file = "path to csv file"
+    vehicle_data = pd.read_csv(vehicle_performance_file)
+    print("file loaded successfully")
+except FileNotFoundError:
+    print("Error: The file was not found. Please check the file path")
+    exit()
+
+# viewing the main data structure
+print(vehicle_data.head())
+
+# data cleaning
+pd.to_datetime()  # for easier plotting
