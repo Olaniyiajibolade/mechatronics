@@ -11,13 +11,12 @@ try:
         r"c:\Users\Hello\Downloads\archive\car_performance_dataset.csv"
     )
     vehicle_data = pd.read_csv(vehicle_performance_file)
-    print("file loaded successfully")
+    print("File Loaded Successfully")
 except FileNotFoundError:
-    print("Error: The file was not found. Please check the file path")
-# viewing the data for the structure
-# print(vehicle_data.describe())
-print(vehicle_data.head())
-# pd.to_datetime()  # for easier plotting
+    print(
+        f"Error: The {vehicle_performance_file} file was not found. Please check the file path"
+    )
+    exit()
 vehicle_features = [
     "Fuel_Efficiency",
     "Engine_Performance",
@@ -25,3 +24,4 @@ vehicle_features = [
     "Car_Brand",
     "Model",
 ]
+# print(vehicle_data[vehicle_features])

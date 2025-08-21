@@ -12,18 +12,29 @@ except FileNotFoundError:
     print("Error: file not found")
 
 # print(mock_data.head())
+# Timestamp, Speed (km/h), Engine RPM, Fuel Consumption (L/100km), and Engine Load (%)
 
 avg_fuel = mock_data["Fuel_Efficiency"].mean()
 avg_acceleration = mock_data["Acceleration"].mean()
-# avg_price = mock_data["Price"].mean()
-print(f"Average fuel: {avg_fuel: .2f}")
-print(f"Average acceleration: {avg_acceleration: .2f}")
 
+max_acceleration = mock_data["Fuel_Efficiency"].max()
+# avg_price = mock_data["Price"].mean()
+print(f"Average fuel: {avg_fuel: .2f} L/100km")
+print(f"Average acceleration: {avg_acceleration: .2f}")
+print(f"max acceleration: {max_acceleration}")
+
+# Histogram
+plt.figure(figsize=(10, 5))
+sns.histplot(mock_data["Fuel_Efficiency"], bins=20, kde=True)
+plt.title("Distribution of Fuel Efficiency")
+plt.xlabel("Fuel Efficiency")
+plt.ylabel("Usage")
+plt.show()
 
 # put exceptions if there is no coresponding data
 # lets try something
-for car in mock_data.head()["Car_Brand"]:
-    print(car)
+""" for car in mock_data.head()["Car_Brand"]:
+    print(car) """
 
 
 """ plt.figure(figsize=(12, 6))
