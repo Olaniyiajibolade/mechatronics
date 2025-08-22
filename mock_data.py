@@ -47,3 +47,9 @@ plt.legend()
 plt.xticks(rotation=45)
 plt.tight_layout()  # Ensures labels don't get cut off
 plt.show() """
+
+# scatter plot
+plt.figure(figsize=(12, 6))
+sns.scatterplot(data=mock_data, x="Acceleration", y="Fuel_Efficiency")
+plt.title("fuel eficiency vs acceleration")
+plt.show()
