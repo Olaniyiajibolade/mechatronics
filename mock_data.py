@@ -33,11 +33,9 @@ plt.show()
 
 # put exceptions if there is no coresponding data
 # lets try something
-""" for car in mock_data.head()["Car_Brand"]:
-    print(car) """
 
-
-""" plt.figure(figsize=(12, 6))
+# graph
+plt.figure(figsize=(12, 6))
 plt.plot(mock_data["Acceleration"], label="Acceleration")
 plt.plot(mock_data["Fuel_Efficiency"], label="Fuel_Efficiency")
 plt.title("Vehicle Acceleration and Fuel Eficiency Over Time")
@@ -45,11 +43,14 @@ plt.xlabel("m/s(square)")
 plt.ylabel("fuel")
 plt.legend()
 plt.xticks(rotation=45)
-plt.tight_layout()  # Ensures labels don't get cut off
-plt.show() """
+plt.tight_layout()
+plt.show()
 
 # scatter plot
 plt.figure(figsize=(12, 6))
 sns.scatterplot(data=mock_data, x="Acceleration", y="Fuel_Efficiency")
 plt.title("fuel eficiency vs acceleration")
 plt.show()
+
+#  understanding the graph is prority
+# make a 'dashboard' for the data visualization

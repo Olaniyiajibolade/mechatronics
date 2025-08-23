@@ -16,7 +16,7 @@ except FileNotFoundError:
     print(
         f"Error: The {vehicle_performance_file} file was not found. Please check the file path"
     )
-    exit()
+    exit()  # does not run the code below if there is an error
 vehicle_features = [
     "Fuel_Efficiency",
     "Engine_Performance",
