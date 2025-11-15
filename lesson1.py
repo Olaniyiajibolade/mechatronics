@@ -1,7 +1,8 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-
+from sklearn.tree import DecisionTreeRegressor
+from sklearn.metrics import mean_absolute_error
 # ------#
 # Vehicle Perforamnce Analyser
 # Project 1
@@ -17,6 +18,8 @@ except FileNotFoundError:
         f"Error: The {vehicle_performance_file} file was not found. Please check the file path"
     )
     exit()  # does not run the code below if there is an error
+vehicle_data = vehicle_data.dropna(axis=0) # for handling missing values
+# y = vehicle_data.price
 vehicle_features = [
     "Fuel_Efficiency",
     "Engine_Performance",
@@ -24,4 +27,5 @@ vehicle_features = [
     "Car_Brand",
     "Model",
 ]
-# print(vehicle_data[vehicle_features])
+X = vehicle_data[vehicle_features]
+model = DecisionTreeRegressor(random_state=1)
