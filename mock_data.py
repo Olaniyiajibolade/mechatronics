@@ -2,6 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+# Mock data for the vehicle analyser project and this file will be used to check the correctness of the model
 sns.set_theme(style="darkgrid")  # style for the graph
 
 mock_car_file = r"c:\Users\Hello\Downloads\archive\car_performance_dataset.csv"
